@@ -23,9 +23,10 @@ Columns: `Title, Artist, Nationality, Date, Medium, Dimensions, AccessionNumber,
 
 ## arxiv/
 
-**arXiv metadata** — AI/ML preprints (primary category `cs.LG`, `cs.CV`, `cs.CL`, `cs.AI`, `cs.NE`, `stat.ML`), split by submission year and gzipped. Packed multi-value categories, free-text abstracts, messy `comments`.
+**arXiv metadata** — preprints split by submission year and gzipped, in two clusters by primary (first) category. Packed multi-value categories, free-text abstracts, raw `authors` (`"A, B and C"`, affiliations in parens), messy `comments`.
 Source: https://www.kaggle.com/datasets/Cornell-University/arxiv
 
-- `arxiv_aiml_2018.csv.gz` … `arxiv_aiml_2024.csv.gz` — 18,910 / 25,009 / 32,154 / 36,640 / 39,918 / 51,502 / 66,501 rows (270,634 total).
+- `arxiv_aiml_2018.csv.gz` … `arxiv_aiml_2024.csv.gz` — **AI/ML** cluster (`cs.LG`, `cs.CV`, `cs.CL`, `cs.AI`, `cs.NE`, `stat.ML`): 18,910 / 25,009 / 32,154 / 36,640 / 39,918 / 51,502 / 66,501 rows (270,634 total).
+- `arxiv_econ_2018.csv.gz` … `arxiv_econ_2024.csv.gz` — **economics** cluster (`econ.*`): 458 / 670 / 1,069 / 1,371 / 1,321 / 1,468 / 1,740 rows (8,097 total).
 
-Columns: `id, submitted_date, categories, title, abstract, num_authors, comments, journal_ref`. Only whitespace is collapsed in text fields; categories stay packed and `comments`/`journal_ref` stay as-is (missingness preserved).
+Columns: `id, submitted_date, categories, title, abstract, authors, num_authors, comments, journal_ref`. Only whitespace is collapsed in text fields; categories stay packed and `comments`/`journal_ref` stay as-is (missingness preserved).
