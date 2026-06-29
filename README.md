@@ -20,3 +20,12 @@ Source: https://github.com/MuseumofModernArt/collection
 - `artworks.csv.gz` — 160,597 rows (full export, 15 columns kept).
 
 Columns: `Title, Artist, Nationality, Date, Medium, Dimensions, AccessionNumber, Classification, Department, DateAcquired, Height (cm), Width (cm), Depth (cm), Diameter (cm), Duration (sec.)`.
+
+## arxiv/
+
+**arXiv metadata** — AI/ML preprints (primary category `cs.LG`, `cs.CV`, `cs.CL`, `cs.AI`, `cs.NE`, `stat.ML`), split by submission year and gzipped. Packed multi-value categories, free-text abstracts, messy `comments`.
+Source: https://www.kaggle.com/datasets/Cornell-University/arxiv
+
+- `arxiv_aiml_2018.csv.gz` … `arxiv_aiml_2024.csv.gz` — 18,910 / 25,009 / 32,154 / 36,640 / 39,918 / 51,502 / 66,501 rows (270,634 total).
+
+Columns: `id, submitted_date, categories, title, abstract, num_authors, comments, journal_ref`. Only whitespace is collapsed in text fields; categories stay packed and `comments`/`journal_ref` stay as-is (missingness preserved).
